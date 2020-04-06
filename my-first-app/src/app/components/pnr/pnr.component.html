@@ -1,0 +1,75 @@
+<div class="row">
+  <div
+    class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4"
+  >
+    <img
+      src="../../assets/images/login.svg"
+      alt="Login"
+      class="img-responsive"
+      style="width: 70px; position: absolute; top: -18%; left: 42%;"
+    />
+    <h3 style="text-align: center;letter-spacing: 0.1cm;">Check PNR Status</h3>
+    <br />
+    <form formGroup="PnrForm" (ngSubmit)="onSubmit()" id="pnr">
+      <!--<ngb-alert  *ngIf="!alertClosed" (close)="alertClosed = true">Password must contain a lowercase,uppercase,number & special character and must be atleast 8 characters long!</ngb-alert>-->
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-envelope fa-lg fa-fw"></i>
+            </div>
+          </div>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            name="email"
+            class="form-control"
+            aria-describedby="emailHelp"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-lock fa-lg fa-fw"></i>
+            </div>
+          </div>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            name="password"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-primary form-control"
+          [disabled]="!PnrForm.valid"
+        >
+          Login</button
+        >&nbsp;
+        <button
+          type="button"
+          (click)="onCancel()"
+          class="btn btn-danger form-control"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+    <br />
+    <a style="cursor: pointer;" routerLink="/forgotpassword"
+      >Forgot password ?</a
+    >
+    <br />
+    <a style="cursor: pointer;" routerLink="/register">Create New Account</a>
+  </div>
+</div>
